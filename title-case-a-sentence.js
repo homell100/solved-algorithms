@@ -7,6 +7,12 @@ For the purpose of this exercise, you should also capitalize connecting words li
  */
 function titleCase(str) {
   let strCapitalized = ''
+  listWords = str.split(" ");
+  for(let i = 0; i< listWords.length; i++){
+    word = listWords[i];
+    var temp = word[0].toUpperCase() + word.slice(1).toLowerCase();
+    strCapitalized = (strCapitalized == '' ? temp : strCapitalized + " " + temp);
+  }
 
   return strCapitalized;
 }
@@ -19,6 +25,8 @@ function titleCase(str) {
  * 3. Cómo sabemos que hemos acabado de realizar la transformación del string
  * 4. Atención! Fijaos que todas las letras deben estar en mínusculas, excepto la primera de cada palabra, que debe ser una mayúscula.
  */
+
+
 
 console.assert("string" == typeof (titleCase("I'm a little tea pot")), `should return a string`)
 console.assert("I'm A Little Tea Pot" == titleCase("I'm a little tea pot"), `titleCase("I'm a little tea pot") should return I'm A Little Tea Pot.`)
